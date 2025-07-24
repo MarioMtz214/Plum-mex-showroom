@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' http://localhost:3000;">
+    <title>Plum-mex add-gallery-form</title>
+    <link rel="stylesheet" href="/frontend/css/output.css">
+    <link rel="stylesheet" href="/frontend/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="flex justify-between items-end content-end pt-4">
+            <div class="w-3/6">
+                <img class="ml-6" src="/frontend/img/LOGO PLUM-MEX negro 1.png" alt="" width="300px">
+            </div>
+            <nav class="w-3/6 border-b-black border-b-4">
+                <ul class="flex justify-around items-center text-2xl mr-1">
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white"
+                            href="/frontend/index.html">Showroom</a></li>
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white"
+                            href="/frontend/projects.html">Projects</a></li>
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white "
+                            href="/frontend/kitchens.html">kitchens</a></li>
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white"
+                            href="/frontend/bathrooms.html">Bathrooms</a></li>
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white "
+                            href="/frontend/about-us.html">About us</a></li>
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white"
+                            href="/frontend/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="w-full">
+            <img src="/frontend/img/header-bathroom-kitchens.jpg" alt="">
+        </div>
+    </header>
+    <main>
+        <div class="max-w-2xl mx-auto bg-white p-6 my-24 rounded shadow">
+            <h1 class="text-2xl font-bold mb-4">Add Project to Gallery</h1>
+
+            <form id="projectForm" enctype="multipart/form-data" class="space-y-4">
+                <!-- Drag & Drop -->
+                <div id="dropzone" class="border-2 border-dashed p-6 rounded text-center text-gray-500 relative">
+                    Drag & drop an image or video here or click to select
+                    <input type="file" name="media" id="media"
+                        class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept="image/*,video/*"
+                        required />
+                </div>
+
+                <!-- Type -->
+                <select name="type" required class="w-full border rounded p-2">
+                    <option value="">Select type</option>
+                    <option value="image">Image</option>
+                    <option value="video">Video</option>
+                </select>
+
+                <!-- Title -->
+                <input type="text" name="title" placeholder="Project Title" required
+                    class="w-full border rounded p-2" />
+
+                <!-- Description -->
+                <textarea name="description" placeholder="Short description" required
+                    class="w-full border rounded p-2"></textarea>
+
+                <!-- Submit -->
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Upload Project</button>
+            </form>
+
+            <p id="message" class="mt-4 text-green-600 font-semibold"></p>
+        </div>
+        <script src="/frontend/js/projects.js"></script>
+    </main>
+
+    <!-- ------------------------Footer------------------------ -->
+
+    <footer>
+        <div class="w-full flex flex-row justify-between items-center p-6 ">
+            <div class="w-3/12 flex justify-start items-center">
+                <p>© copyright all rights reserved</p>
+            </div>
+            <div class="w-6/12 border-b-black border-b-2">
+                <ul class="flex justify-around items-center text-xl mr-1">
+                    <li class="mb-4"><a class="px-4 py-1.5 hover:overline" href="/frontend/index.html">Showroom</a>
+                    </li>
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:overline"
+                            href="/frontend/projects.html">Projects</a></li>
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:overline"
+                            href="/frontend/kitchens.html">Kitchens</a></li>
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:overline"
+                            href="/frontend/bathrooms.html">Bathrooms</a></li>
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:overline"
+                            href="/frontend/about-us.html">About us</a></li>
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:overline"
+                            href="/frontend/contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="w-3/12 flex justify-end items-center">
+                <a href="">Terminos y condiciones</a>
+            </div>
+        </div>
+        <div class="w-full flex justify-center items-center relative bg-amber-400">
+            <img class="absolute -top-1 left-0" src="/frontend/img/plum-mex-subtract.png" alt="">
+            <img src="/frontend/img/kitchen-footer.png" alt="">
+        </div>
+    </footer>
+</body>
+
+</html>

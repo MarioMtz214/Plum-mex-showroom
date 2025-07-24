@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Biryani:wght@200;300;400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+variables color {
+    --color-texto: #000000;
+    --color-texto-secundario: #B7B7B7;
+    --plummexColor: #3DB5BD;
+
+}
+
+
+* {
+  box-sizing: border-box;
+  /* margin: 0px;
+  padding: 0px; */
+  font-family: "Biryani", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+h1, h2, h3{
+    font-family: "DM Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: bold;
+  font-style: normal;
+}
+
+
+
