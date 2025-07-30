@@ -1,77 +1,80 @@
-// Referencias
+// --------------------------frontend/js/projects.js--------------------------
+
 const dropzone = document.getElementById("dropzone");
 const mediaInput = document.getElementById("media");
 const form = document.getElementById("projectForm");
 const message = document.getElementById("message");
 
-// Hacer clic en el área para abrir el file dialog
+let selectedFile = null;
+
 dropzone.addEventListener("click", () => {
   mediaInput.click();
 });
 
-// Mostrar nombre del archivo seleccionado
 mediaInput.addEventListener("change", () => {
   if (mediaInput.files.length > 0) {
-    dropzone.textContent = `Selected: ${mediaInput.files[0].name}`;
+    selectedFile = mediaInput.files[0];
+    dropzone.textContent = `Selected: ${selectedFile.name}`;
   }
 });
 
-// Drag over
 dropzone.addEventListener("dragover", (e) => {
   e.preventDefault();
   dropzone.classList.add("bg-gray-100");
 });
 
-// Drag leave
 dropzone.addEventListener("dragleave", () => {
   dropzone.classList.remove("bg-gray-100");
 });
 
-// Drop
 dropzone.addEventListener("drop", (e) => {
   e.preventDefault();
   dropzone.classList.remove("bg-gray-100");
 
   const files = e.dataTransfer.files;
   if (files.length > 0) {
-    mediaInput.files = files;
-    dropzone.textContent = `Selected: ${files[0].name}`;
+    selectedFile = files[0];
+    dropzone.textContent = `Selected: ${selectedFile.name}`;
   }
 });
 
-// Manejar el envío del formulario (simulado aquí, debes conectarlo a tu backend más adelante)
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const formData = new FormData(form);
+  const formData = new FormData();
 
-  // Cambia el nombre del campo para coincidir con el backend
-  formData.set("mediaType", formData.get("type"));
-  formData.delete("type"); // elimina el original si quieres evitar confusión
+  const title = form.elements["title"].value;
+  const description = form.elements["description"].value;
+  const type = form.elements["type"].value;
+
+  if (!selectedFile) {
+    message.textContent = "⚠️ Debes seleccionar una imagen o video.";
+    message.classList.remove("text-green-600");
+    message.classList.add("text-red-600");
+    return;
+  }
+
+  formData.append("title", title);
+  formData.append("description", description);
+  formData.append("mediaType", type);
+  formData.append("media", selectedFile);
+
+  console.log("📦 Formulario enviado:");
+  for (let pair of formData.entries()) {
+    console.log(pair[0], pair[1]);
+  }
 
   try {
-    for (let pair of formData.entries()) {
-      console.log(pair[0], pair[1]);
-    }
-    const response = await fetch('http://localhost:3000/api/gallery/upload', {
-  method: 'POST',
-  body: formData,
-})
+    const response = await fetch("http://localhost:3000/api/gallery/upload", {
+      method: "POST",
+      body: formData,
+    });
 
-    const result = await response.json();
-
-    if (response.ok) {
-      message.textContent = result.message || "Project uploaded successfully!";
-      form.reset();
-      dropzone.textContent = "Drag & drop an image or video here";
-    } else {
-      message.textContent = result.message || "Error uploading project.";
-      message.classList.remove("text-green-600");
-      message.classList.add("text-red-600");
-    }
-  } catch (err) {
-    console.error("❌ Error al subir:", err);
-    message.textContent = "Unexpected error occurred.";
+    const data = await response.json();
+    console.log("✅ Subida exitosa:", data);
+  } catch (error) {
+    console.error("❌ Error al subir:", error);
+    message.textContent = "❌ Error al subir archivo.";
     message.classList.remove("text-green-600");
     message.classList.add("text-red-600");
   }
@@ -79,11 +82,16 @@ form.addEventListener("submit", async (e) => {
 
 async function loadGallery() {
   try {
-    const res = await fetch("/api/gallery");
+    const res = await fetch("http://localhost:3000/api/gallery/projects");
     const projects = await res.json();
 
     const videoCarousel = document.getElementById("video-carousel");
     const imageGallery = document.getElementById("image-gallery");
+
+    if (!videoCarousel || !imageGallery) {
+      console.warn("Galería no presente en esta vista.");
+      return;
+    }
 
     videoCarousel.innerHTML = "";
     imageGallery.innerHTML = "";
@@ -111,5 +119,4 @@ async function loadGallery() {
   }
 }
 
-// Carga la galería al cargar la página
 window.addEventListener("DOMContentLoaded", loadGallery);

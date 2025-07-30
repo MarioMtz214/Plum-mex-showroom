@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' http://localhost:3000;">
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' http://localhost:3000;">
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'self' data: blob: filesystem:; connect-src *"> -->
     <title>Plum-mex add-gallery-form</title>
     <link rel="stylesheet" href="/frontend/css/output.css">
     <link rel="stylesheet" href="/frontend/css/styles.css">
@@ -43,6 +44,8 @@
             <img src="/frontend/img/header-bathroom-kitchens.jpg" alt="">
         </div>
     </header>
+
+    <!--frontend/admin/add-gallery-form.html-->
     <main>
         <div class="max-w-2xl mx-auto bg-white p-6 my-24 rounded shadow">
             <h1 class="text-2xl font-bold mb-4">Add Project to Gallery</h1>
@@ -51,7 +54,7 @@
                 <!-- Drag & Drop -->
                 <div id="dropzone" class="border-2 border-dashed p-6 rounded text-center text-gray-500 relative">
                     Drag & drop an image or video here or click to select
-                    <input type="file" name="media" id="media"
+                    <input type="file" id="media" name="media"
                         class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept="image/*,video/*"
                         required />
                 </div>
@@ -77,7 +80,7 @@
 
             <p id="message" class="mt-4 text-green-600 font-semibold"></p>
         </div>
-        <script src="/frontend/js/projects.js"></script>
+       
     </main>
 
     <!-- ------------------------Footer------------------------ -->
@@ -117,6 +120,7 @@
             <img src="/frontend/img/kitchen-footer.png" alt="">
         </div>
     </footer>
+     <script src="../js/projects.js"></script>
 </body>
 
 </html>
