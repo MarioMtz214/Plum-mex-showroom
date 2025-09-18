@@ -3,52 +3,79 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
-const db = require("../db/database");
+const db = require("../db"); // tu conexión SQLite
 
-// Multer config
+// Configuración de multer
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => cb(null, path.join(__dirname, "../uploads")),
-  filename: (req, file, cb) => cb(null, `${Date.now()}-${file.originalname}`),
+  destination: function (req, file, cb) {
+    cb(null, "uploads/");
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + Math.round(Math.random() * 1e9);
+    cb(null, file.fieldname + uniqueSuffix + path.extname(file.originalname));
+  },
 });
-const upload = multer({ storage });
 
-// POST /upload
-router.post("/upload", upload.single("media"), (req, res) => {
-  console.log("POST /upload received");
-  console.log("Body:", req.body);
-  console.log("File:", req.file);
+const fileFilter = (req, file, cb) => {
+  const allowedTypes = /jpeg|jpg|png|gif|mp4|mov|avi/;
+  const ext = path.extname(file.originalname).toLowerCase();
+  if (allowedTypes.test(ext)) {
+    cb(null, true);
+  } else {
+    cb(new Error("File type not supported"), false);
+  }
+};
 
-  const { title, description, mediaType } = req.body;
-  if (!req.file) return res.status(400).json({ message: "No file uploaded" });
+const upload = multer({ storage, fileFilter });
 
-  const sql = `INSERT INTO projects (title, description, media_type, filename, uploaded_at)
-             VALUES (?, ?, ?, ?, datetime('now'))`;
-  db.run(
-    sql,
-    [title, description, mediaType, req.file.filename],
-    function (err) {
-      if (err) {
-        console.error("DB error:", err);
-        return res.status(500).json({ message: "Database error" });
-      }
-      res.json({ message: "Project uploaded successfully" });
+// Ruta para subir proyecto con múltiples archivos
+router.post("/upload", upload.array("media", 20), async (req, res) => {
+  try {
+    const { title, description, mediaType } = req.body;
+    if (!title || !description) return res.status(400).json({ error: "Missing title or description" });
+
+    // Guardar proyecto
+    const result = await db.run(
+      "INSERT INTO projects (title, description) VALUES (?, ?)",
+      [title, description]
+    );
+    const projectId = result.lastID;
+
+    // Guardar cada archivo
+    const files = req.files;
+    for (const file of files) {
+      // Detectar si es video o imagen
+      let type = "image";
+      if (file.mimetype.startsWith("video/")) type = "video";
+
+      await db.run(
+        "INSERT INTO media (project_id, media_type, filename) VALUES (?, ?, ?)",
+        [projectId, type, file.filename]
+      );
     }
-  );
+
+    res.json({ success: true, projectId });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
 });
 
-// GET /projects
-router.get("/projects", (req, res) => {
-  const query = "SELECT * FROM projects ORDER BY uploaded_at DESC";
+// Obtener todos los proyectos con media
+router.get("/projects", async (req, res) => {
+  try {
+    const projects = await db.all("SELECT * FROM projects ORDER BY uploaded_at DESC");
 
-  db.all(query, [], (err, rows) => {
-    if (err) {
-      console.error("❌ Error al obtener los proyectos:", err.message);
-      return res.status(500).json({ error: "Error al obtener proyectos" });
+    for (const project of projects) {
+      const media = await db.all("SELECT * FROM media WHERE project_id = ?", [project.id]);
+      project.media = media;
     }
 
-    res.json(rows);
-  });
+    res.json(projects);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: "Server error" });
+  }
 });
 
-console.log("✅ gallery.js cargado");
 module.exports = router;

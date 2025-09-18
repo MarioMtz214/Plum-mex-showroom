@@ -1,3 +1,4 @@
+<!-- frontend/admin/add-gallery-form.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,37 +54,45 @@
         <div class="max-w-2xl mx-auto bg-white p-6 my-24 rounded shadow">
             <h1 class="text-2xl font-bold mb-4">Add Project to Gallery</h1>
 
+            <!-- Upload Form -->
             <form id="projectForm" enctype="multipart/form-data" class="space-y-4">
-                <!-- Drag & Drop -->
-                <div id="dropzone" class="border-2 border-dashed p-6 rounded text-center text-gray-500 relative">
-                    Drag & drop an image or video here or click to select
-                    <input type="file" id="media" name="media"
-                        class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept="image/*,video/*"
-                        required />
-                </div>
+            <!-- Drag & Drop -->
+            <div id="dropzone" class="border-2 border-dashed p-6 rounded text-center text-gray-500 relative">
+                Drag & drop an image or video here or click to select
+                <input type="file" id="media" name="media" multiple class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" accept="image/*,video/*" required />
+            </div>
 
-                <!-- Type -->
-                <select name="type" required class="w-full border rounded p-2">
-                    <option value="">Select type</option>
-                    <option value="image">Image</option>
-                    <option value="video">Video</option>
-                </select>
+            <!-- Type -->
+            <select name="type" required class="w-full border rounded p-2">
+                <option value="">Select type</option>
+                <option value="image">Image</option>
+                <option value="video">Video</option>
+            </select>
 
-                <!-- Title -->
-                <input type="text" name="title" placeholder="Project Title" required
-                    class="w-full border rounded p-2" />
+            <!-- Title -->
+            <input type="text" name="title" placeholder="Project Title" required class="w-full border rounded p-2" />
 
-                <!-- Description -->
-                <textarea name="description" placeholder="Short description" required
-                    class="w-full border rounded p-2"></textarea>
+            <!-- Description -->
+            <textarea name="description" placeholder="Short description" required class="w-full border rounded p-2"></textarea>
 
-                <!-- Submit -->
-                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Upload Project</button>
+            <!-- Submit -->
+            <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded">Upload Project</button>
             </form>
 
             <p id="message" class="mt-4 text-green-600 font-semibold"></p>
+
+            <!-- Delete Form -->
+            <h2 class="text-xl font-bold mt-12 mb-4">Delete Project(s)</h2>
+            <form id="deleteForm" class="space-y-4">
+            <select id="deleteSelect" name="projects" multiple class="w-full border rounded p-2" size="6">
+                <!-- Projects will be loaded dynamically here -->
+            </select>
+
+            <button type="submit" class="bg-red-600 text-white px-4 py-2 rounded">Delete Selected Project(s)</button>
+            </form>
+
+            <p id="deleteMessage" class="mt-4 text-red-600 font-semibold"></p>
         </div>
-       
     </main>
 
     <!-- ------------------------Footer------------------------ -->
