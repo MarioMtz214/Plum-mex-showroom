@@ -15,7 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 
 // Solo permitir tu frontend
 app.use(cors({
-  origin: "https://plum-mex.co.uk"
+  origin: "https://plum-mex.co.uk",
+  methods: ["GET","POST","PUT","DELETE"],
 }));
 
 // Content-Security-Policy
