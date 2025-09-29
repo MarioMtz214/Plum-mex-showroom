@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         // Image card
         card.innerHTML = `
           <img src="http://localhost:3000/uploads/${cover.filename}" 
-               alt="${project.title}" 
+               alt="${project.title} - ${project.description}" 
                class="w-full h-60 object-cover cursor-pointer popup-trigger">
           <div class="p-2">
             <h3 class="text-lg font-semibold">${project.title}</h3>
@@ -74,7 +74,7 @@ function showPopup(project, videoPopup = false) {
     const slidesHtml = project.media.map((media, idx) => {
       if (media.media_type === "video") return ""; // ignorar videos en carrusel de imágenes
       return `<img class="popup-slide ${idx === 0 ? "block" : "hidden"} w-full max-h-[70vh] object-contain" 
-                   src="http://localhost:3000/uploads/${media.filename}" alt="${project.title}">`;
+                  src="http://localhost:3000/uploads/${media.filename}" alt="${project.title} - ${project.description}" >`;
     }).join("");
 
     const indicatorsHtml = project.media.map((media, idx) => {

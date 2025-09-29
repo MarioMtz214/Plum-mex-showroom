@@ -4,48 +4,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Meta SEO -->
+    <meta name="description" content="Visit Plum-Mex Showroom in Crondall. Discover premium kitchens and bathrooms, book a showroom visit, or contact us today for design, supply, and installation services.">
+    <meta name="keywords" content="kitchen showroom Crondall, bathroom showroom UK, Plum-Mex, kitchen design Hampshire, bathroom design Farnham, bespoke kitchens UK">
+    <meta name="author" content="Plum-Mex Showroom">
+
+    <!-- Open Graph (para compartir en redes) -->
+    <meta property="og:title" content="Plum-Mex Showroom | Kitchens & Bathrooms in Crondall">
+    <meta property="og:description" content="Book a visit to our showroom and explore our luxury kitchens and bathrooms. Based in Crondall, near Farnham and Odiham.">
+    <meta property="og:image" content="https://plum-mex.co.uk/img/LOGO%20PLUM-MEX%20negro%201.png">
+    <meta property="og:url" content="https://plum-mex.co.uk/contact.html">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
     <title>Plum-mex Showroom</title>
     <link rel="stylesheet" href="./css/output.css">
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <body>
-    <header>
-        <div class="flex justify-between items-end content-end pt-4">
-            <div class="w-3/6">
-                <img class="ml-6" src="./img/LOGO PLUM-MEX negro 1.png" alt="" width="300px">
+    <header id="header" class="w-full">
+       <!-- NAV -->
+        <nav class="bg-white w-full">
+            <div class="w-full flex flex-wrap items-center justify-between mx-auto p-4">
+                
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="./img/LOGO PLUM-MEX negro 1.png" class="h-30 lg:h-30 md:h-20 sm:h-14" alt="Plum-Mex Logo" />
+                </a>
+
+                <!-- Botón hamburguesa -->
+                <button id="menu-toggle" type="button" 
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg 
+                        lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                aria-controls="navbar" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
+                <!-- Links -->
+                <div class="hidden w-full lg:block lg:w-auto border-b border-black pb-2" id="navbar">
+                    <ul class="font-medium flex flex-col p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg 
+                                bg-gray-50 lg:flex-row lg:space-x-6 lg:mt-0 md:border-0 lg:bg-white">
+                        <li class="hover:bg-[#3DB5BD] hover:text-white rounded-md transition ease-in-out duration-500"><a href="index.html" class="block py-2 px-3 text-gray-900 rounded-md hover:bg-[#3DB5BD] hover:text-white md:hover:bg-transparent">Showroom</a></li>
+                        <li class="hover:bg-[#3DB5BD] hover:text-white rounded-md transition ease-in-out duration-500"><a href="projects.html" class="block py-2 px-3 text-gray-900 rounded-md hover:bg-[#3DB5BD] hover:text-white md:hover:bg-transparent ">Projects</a></li>
+                        <li class="hover:bg-[#3DB5BD] hover:text-white rounded-md transition ease-in-out duration-500"><a href="kitchens.html" class="block py-2 px-3 text-gray-900 rounded-md hover:bg-[#3DB5BD] hover:text-white md:hover:bg-transparent">Kitchens</a></li>
+                        <li class="hover:bg-[#3DB5BD] hover:text-white rounded-md transition ease-in-out duration-500"><a href="bathrooms.html" class="block py-2 px-3 text-gray-900 rounded-md hover:bg-[#3DB5BD] hover:text-white md:hover:bg-transparent">Bathrooms</a></li>
+                        <li class="hover:bg-[#3DB5BD] hover:text-white rounded-md transition ease-in-out duration-500"><a href="about-us.html" class="block py-2 px-3 text-gray-900 rounded-md hover:bg-[#3DB5BD] hover:text-white md:hover:bg-transparent">About us</a></li>
+                        <li class="hover:bg-[#3DB5BD] hover:text-white rounded-md transition ease-in-out duration-500"><a href="contact.html" class="block py-2 px-3 text-white bg-black rounded-md md:bg-black md:text-white hover:bg-[#3DB5BD] hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-            <nav class="w-3/6 border-b-black border-b-2">
-                <ul class="flex justify-around items-center text-xl mr-1">
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white"
-                            href="index.html">Showroom</a></li>
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white"
-                            href="projects.html">Projects</a></li>
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white "
-                            href="kitchens.html">kitchens</a></li>
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white"
-                            href="bathrooms.html">Bathrooms</a></li>
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white "
-                            href="about-us.html">About us</a></li>
-                    <li class="mb-4"><a class="px-4 py-1.5 bg-black text-white rounded-xl"
-                            href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="w-full">
-            <img src="./img/header-bathroom-kitchens.jpg" alt="">
-        </div>
-        <div class="flex justify-end items-end absolute ">
-            <a class="fixed top-1 right-2 z-50" href="#showroom"><img src="./icon/arrow-top.svg" alt="Back to top"></a>
-        </div>
+        </nav> 
     </header>
+
+    
     <main>
+        <section class="w-full">
+            <div class="w-ful flex flex-row gap-8">
+                <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-1.png" alt=""></div>
+                <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-2.png" alt=""></div>
+                <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-3.png" alt=""></div>
+                <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-4.png" alt=""></div>
+            </div>
+        </section>
         <section class="max-w-4xl mx-auto px-6 py-12">
+      
+        <div class="flex justify-end items-end absolute ">
+            <a class="fixed bottom-6 right-2 z-50 max-h-20 max-w-20 md:h-15 md:w-15 sm:h-15 sm:w-15 " href="#header"><img src="./icon/arrow-top.svg" alt="Back to top"></a>
+        </div>
+
             <h2 class="text-3xl font-bold text-center mb-8">Book a Visit to Our Showroom</h2>
             <form id="contact-form" class="space-y-6">
                 <div>
@@ -68,16 +101,69 @@
                     <textarea id="message" name="message" rows="5" required
                         class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#3DB5BD]"></textarea>
                 </div>
-                <div class="text-center">
+                <div class="text-center mb-8">
                     <button type="submit"
                         class="bg-black text-white px-6 py-2 rounded-xl hover:bg-[#3DB5BD] hover:text-white transition">Send
                         Message</button>
                 </div>
             </form>
-            <div class="mt-12">
-                <h3 class="text-xl font-semibold mb-4">Visit us</h3>
-                <iframe class="w-full h-72 rounded-xl border-2 border-gray-300"
-                    src="https://www.google.com/maps/embed?pb=!1m18!..." loading="lazy"
+        
+        </section>
+        
+        <!-- Contact Info Card -->
+        <section class="w-full px-6 mb-10">
+            <div class="max-w-4xl mx-auto bg-white shadow-lg rounded-2xl p-6 md:p-10 flex flex-col md:flex-row gap-6 md:gap-12">
+                
+                <!-- Left side: Contact details -->
+                <div class="flex-1 space-y-4">
+                <h2 class="text-2xl md:text-3xl font-semibold text-gray-800">Get in Touch</h2>
+                
+                <p class="flex items-center text-gray-700 text-base md:text-lg">
+                    📞 <span class="ml-2">Call us: <a href="tel:01252851109" class="text-[#3DB5BD] hover:underline">01252 851109</a></span>
+                </p>
+
+                <p class="flex items-center text-gray-700 text-base md:text-lg">
+                    ✉️ <span class="ml-2">Email: <a href="mailto:info@plum-mex.co.uk" class="text-[#3DB5BD] hover:underline">info@plum-mex.co.uk</a></span>
+                </p>
+
+                <div class="flex items-center space-x-4 p-2 rounded-lg">
+                    <span class="text-gray-700">Follow us:</span>
+                <!-- Instagram SVG -->
+                    <a href="https://www.instagram.com/plummexshowroom/" target="_blank" aria-label="Instagram" class="text-black hover:text-black w-7 h-7">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.9.2 2.4.4.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.4 1.2.4 2.4.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.9-.4 2.4-.2.6-.5 1-1 1.5-.5.5-.9.8-1.5 1-.5.2-1.2.4-2.4.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.9-.2-2.4-.4-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.5-.4-1.2-.4-2.4-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-1.9.4-2.4.2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .5-.2 1.2-.4 2.4-.4C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.7.1 4.8.3 4.1.6c-.8.3-1.5.7-2.2 1.4C1.2 2.7.8 3.4.6 4.1.3 4.8.1 5.7.1 7 0 8.3 0 8.7 0 12s0 3.7.1 5c.1 1.3.3 2.2.6 2.9.3.8.7 1.5 1.4 2.2.7.7 1.4 1.1 2.2 1.4.7.3 1.6.5 2.9.6 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.2-.3 2.9-.6.8-.3 1.5-.7 2.2-1.4.7-.7 1.1-1.4 1.4-2.2.3-.7.5-1.6.6-2.9.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.2-.6-2.9-.3-.8-.7-1.5-1.4-2.2C21.3 1.2 20.6.8 19.8.6c-.7-.3-1.6-.5-2.9-.6C15.7 0 15.3 0 12 0z"/>
+                        <path d="M12 5.8A6.2 6.2 0 1 0 18.2 12 6.2 6.2 0 0 0 12 5.8zm0 10.2A4 4 0 1 1 16 12a4 4 0 0 1-4 4zM18.4 4.6a1.44 1.44 0 1 0 1.44 1.44A1.44 1.44 0 0 0 18.4 4.6z"/>
+                    </svg>
+                    </a>
+
+                    <!-- Facebook SVG -->
+                    <a href="https://www.facebook.com/Plummex" target="_blank" aria-label="Facebook" class="text-black hover:text-black w-7 h-7">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M22.7 0H1.3C.6 0 0 .6 0 1.3v21.3C0 23.4.6 24 1.3 24h11.5v-9.3H9.7V11h3.1V8.4c0-3.1 1.9-4.7 4.6-4.7 1.3 0 2.4.1 2.7.1v3.2h-1.9c-1.5 0-1.8.7-1.8 1.7V11h3.6l-.5 3.7h-3.1V24h6.1c.7 0 1.3-.6 1.3-1.3V1.3c0-.7-.6-1.3-1.3-1.3"/>
+                    </svg>
+                    </a>
+                </div>
+                </div>
+
+                <!-- Right side: Address -->
+                <div class="flex-1 bg-gray-50 p-4 md:p-6 rounded-xl border border-gray-200">
+                <h3 class="text-xl font-semibold text-gray-800 mb-2">Visit Us</h3>
+                <p class="text-gray-700 text-base md:text-lg leading-relaxed">
+                    📍 Unit 12, Finns Business Park, Mill Lane, Crondall, GU10 5RX
+                </p>
+                <p class="text-gray-600 text-sm md:text-base mt-2">
+                    (Just off the A287 between Odiham and Farnham, behind the BP petrol station)
+                </p>
+                </div>
+            </div>
+        </section>
+        <!-- map -->
+        <section class="px-6 mb-8">
+            <div class="map-container mt-11">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1248.6880010535633!2d-0.8734918758273164!3d51.248986034633006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48742fc40f416519%3A0x245d993214f5afc!2sPlum-Mex%20Kitchens%20%26%20Bathrooms!5e0!3m2!1ses!2ses!4v1758885917299!5m2!1ses!2ses" 
+                    allowfullscreen="" 
+                    loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             </div>
@@ -87,13 +173,15 @@
 
     <!-- ------------------------Footer------------------------ -->
 
-    <footer>
+    <footer class="flex flex-col justify-center items-center w-full bg-white">
+       
         <div class="w-full flex flex-row justify-between items-center p-6 ">
-            <div class="w-3/12 flex justify-start items-center">
+            <div class="w-auto  flex justify-start items-center">
                 <p>© copyright all rights reserved</p>
             </div>
-            <div class="w-6/12 border-b-black border-b-2">
-                <ul class="flex justify-around items-center text-xl mr-1">
+            <!-- ocultar en pantallas pequeñas -->
+            <div class="hidden xl:block w-auto border-b-black border-b-2">
+                <ul class="flex justify-around items-center text-xl lg:text-md mr-1">
                     <li class="mb-4"><a class="px-4 py-1.5 hover:overline" href="index.html">Showroom</a>
                     </li>
                     <li class="mb-4"><a
@@ -112,15 +200,51 @@
                             href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="w-3/12 flex justify-end items-center">
-                <a href="">Terminos y condiciones</a>
+            <div class="w-auto  flex justify-end items-center ">
+                <a href="">Terms and conditions</a>
             </div>
         </div>
+        <!-- ocultar en pantallas grandes -->
+         <div class="flex xl:hidden justify-center w-full md:border-b-black md:border-b-2 mb-4 ">
+                <ul class="flex flex-col md:flex-row justify-around items-center w-[80%] text-xl lg:text-lg mr-1">
+                    <li class="mb-4"><a class="px-4 py-1.5 hover:overline" href="index.html">Showroom</a>
+                    </li>
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:overline"
+                            href="projects.html">Projects</a></li>
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:overline"
+                            href="kitchens.html">kitchens</a></li>
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:overline"
+                            href="bathrooms.html">Bathrooms</a></li>
+                    <li class="mb-4"><a
+                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:overline"
+                            href="about-us.html">About us</a></li>
+                    <li class="mb-4"><a class="px-4 py-1.5 bg-black text-white rounded-xl"
+                            href="contact.html">Contact</a></li>
+                </ul>
+            </div>
         <div class="w-full flex justify-center items-center relative">
             <img class="absolute -top-1 left-0" src="./img/plum-mex-subtract.png" alt="">
             <img src="./img/kitchen-footer.png" alt="">
         </div>
     </footer>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 flex flex-col md:flex-row items-center justify-between z-50 hidden">
+    <p class="text-sm md:text-base mb-2 md:mb-0">
+        We use cookies to improve your browsing experience and analyse our traffic. By continuing, you agree to our 
+        <a href="privacy.html" class="underline hover:text-[#3DB5BD]">Privacy Policy</a>.
+    </p>
+    <div class="flex gap-2">
+        <button id="accept-cookies" class="bg-[#3DB5BD] text-white px-4 py-2 rounded-md text-sm hover:bg-[#319197]">
+        Accept
+        </button>
+        <button id="decline-cookies" class="bg-gray-700 text-white px-4 py-2 rounded-md text-sm hover:bg-gray-600">
+        Decline
+        </button>
+    </div>
+    </div>
 
 
     <script>
@@ -150,6 +274,32 @@
                 alert('Failed to send the message.');
                 console.error(err);
             }
+        });
+
+        const toggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+
+        toggle.addEventListener('click', () => {
+            navbar.classList.toggle('hidden');
+        });
+
+        const banner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('accept-cookies');
+        const declineBtn = document.getElementById('decline-cookies');
+
+        // Mostrar banner si no hay decisión guardada
+        if (!localStorage.getItem('cookieConsent')) {
+            banner.classList.remove('hidden');
+        }
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            banner.classList.add('hidden');
+        });
+
+        declineBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            banner.classList.add('hidden');
         });
     </script>
 </body>
