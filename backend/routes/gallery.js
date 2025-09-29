@@ -3,7 +3,8 @@ const express = require("express");
 const router = express.Router();
 const multer = require("multer");
 const path = require("path");
-const db = require("../db"); // tu conexión SQLite
+const db = require('../db/database');
+// const db = require("../db"); // tu conexión SQLite
 
 // Configuración de multer
 const storage = multer.diskStorage({
