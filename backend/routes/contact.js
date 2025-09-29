@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
     // Enviar correo con Graph API
     await sendContactEmail({ name, email, phone, message });
 
-    res.status(200).json({ message: "Message sent successfully via Microsoft Graph." });
+    res.status(200).json({ message: "Message sent successfully. We'll contact you soon!" });
   } catch (error) {
     console.error("Error sending email via Graph:", error);
     res.status(500).json({ message: "Failed to send message." });
