@@ -1,4 +1,4 @@
-// --------------------------backend/server.js--------------------------
+// backend/server.js
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
@@ -10,13 +10,22 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Solo permitir tu frontend
 app.use(cors({
   origin: "https://plum-mex.co.uk"
 }));
 
+// Content-Security-Policy
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy", 
+    "default-src 'self'; connect-src 'self' https://plummex-backend.onrender.com"
+  );
+  next();
+});
 
 // Static folder for uploaded media
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
@@ -24,11 +33,6 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Import routes
 app.use('/api/contact', contactRoute);
 app.use("/api/gallery", galleryRoutes);
-
-app.use((req, res, next) => {
-  res.setHeader("Content-Security-Policy", "default-src 'self'; connect-src 'self' http://localhost:3000");
-  next();
-});
 
 // Start server
 app.listen(PORT, () => {
