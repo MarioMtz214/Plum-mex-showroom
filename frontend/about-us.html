@@ -1,87 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plum-mex Showroom</title>
-    <link rel="stylesheet" href="./css/output.css">
-    <link rel="stylesheet" href="./css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- Primary SEO -->
+  <title>Plum-Mex Showroom | Luxury Kitchens & Bathrooms near Farnham, Odiham & Fleet</title>
+  <meta name="description" content="Discover bespoke kitchens and bathrooms at Plum-Mex Showroom in Crondall. We design, supply, and install premium interiors for homes near Farnham, Odiham, Fleet and Alton.">
+  <meta name="keywords" content="kitchen showroom Farnham, bathroom design Odiham, Plum-Mex Crondall, kitchen installation Fleet, luxury bathrooms Alton, bespoke kitchens Hampshire, kitchen and bathroom supply near me">
+  <meta name="author" content="Plum-Mex Showroom Team">
+
+  <!-- Local SEO -->
+  <meta name="geo.region" content="GB-HAM">
+  <meta name="geo.placename" content="Crondall">
+  <meta name="geo.position" content="51.2401;-0.8583">
+  <meta name="ICBM" content="51.2401, -0.8583">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Plum-Mex Showroom | Bespoke Kitchens & Bathrooms in Crondall">
+  <meta property="og:description" content="Visit Plum-Mex Showroom near Farnham to explore elegant, custom kitchens and bathrooms designed to perfection.">
+  <meta property="og:image" content="https://plum-mex.co.uk/frontend/img/og-image.jpg">
+  <meta property="og:url" content="https://plum-mex.co.uk/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+
+  <!-- Favicon & Apple -->
+<link rel="icon" href="/frontend/img/Logo-plum-mex-1x1-white-bg-favicon.png" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/frontend/img/Logo-plum-mex-1x1-white-bg-180x180.png">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/output.css">
+  <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
-    <header>
-        <div class="flex justify-between items-end content-end pt-4">
-            <div class="w-3/6">
-                <img class="ml-6" src="./img/LOGO PLUM-MEX negro 1.png" alt="" width="300px">
+     <header id="header" class="w-full">
+       <!-- NAV -->
+        <nav class="bg-white w-full">
+            <div class="w-full flex flex-wrap items-center justify-between mx-auto p-4">
+                
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3">
+                    <img src="./img/LOGO PLUM-MEX negro 1.png" class="h-30 lg:h-30 md:h-20 sm:h-14" alt="Plum-Mex Logo" />
+                </a>
+
+                <!-- Botón hamburguesa -->
+                <button id="menu-toggle" type="button" 
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg 
+                        lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                aria-controls="navbar" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+
+                <!-- Links -->
+                <div class="hidden w-full lg:block lg:w-auto border-b border-black pb-2" id="navbar">
+                    <ul class="font-medium flex flex-col p-4 lg:p-0 mt-4 border border-gray-100 rounded-lg 
+                                bg-gray-50 lg:flex-row lg:space-x-6 lg:mt-0 md:border-0 lg:bg-white">
+                        <li class="hover:bg-[#3DB5BD] hover:text-white rounded-md transition ease-in-out duration-500"><a href="index.html" class="block py-2 px-3 rounded-md hover:bg-[#3DB5BD] hover:text-white md:hover:bg-transparent">Showroom</a></li>
+                        <li class="hover:bg-[#3DB5BD] hover:text-white rounded-md transition ease-in-out duration-500"><a href="projects.html" class="block py-2 px-3 text-gray-900 rounded-md hover:bg-[#3DB5BD] hover:text-white md:hover:bg-transparent ">Projects</a></li>
+                        <li class="hover:bg-[#3DB5BD] hover:text-white rounded-md transition ease-in-out duration-500"><a href="kitchens.html" class="block py-2 px-3 text-gray-900 rounded-md hover:bg-[#3DB5BD] hover:text-white md:hover:bg-transparent">Kitchens</a></li>
+                        <li class="hover:bg-[#3DB5BD] hover:text-white rounded-md transition ease-in-out duration-500"><a href="bathrooms.html" class="block py-2 px-3 text-gray-900 rounded-md hover:bg-[#3DB5BD] hover:text-white md:hover:bg-transparent">Bathrooms</a></li>
+                        <li class="text-white bg-black rounded-md md:bg-black md:text-white hover:bg-[#3DB5BD] hover:text-white transition ease-in-out duration-500"><a href="about-us.html" class="block py-2 px-3 rounded-md hover:bg-[#3DB5BD] hover:text-white md:hover:bg-transparentt">About us</a></li>
+                        <li class="hover:bg-[#3DB5BD] hover:text-white rounded-md transition ease-in-out duration-500"><a href="contact.html" class="block py-2 px-3 text-black rounded-md hover:bg-[#3DB5BD] hover:text-white">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-            <nav class="w-3/6 border-b-black border-b-4">
-                <ul class="flex justify-around items-center text-2xl mr-1">
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white"
-                            href="index.html">Showroom</a></li>
-                    <li class="mb-4"><a class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white"
-                            href="projects.html">Projects</a></li>
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white "
-                            href="kitchens.html">kitchens</a></li>
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white"
-                            href="bathrooms.html">Bathrooms</a></li>
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 rounded-xl bg-black text-white "
-                            href="about-us.html">About us</a></li>
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:bg-[#3DB5BD] hover:text-white"
-                            href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="w-full">
-            <img src="./img/header-bathroom-kitchens.jpg" alt="">
-        </div>
-        <div class="flex justify-end items-end absolute ">
-            <a class="fixed top-1 right-2 z-50" href="#showroom"><img src="./icon/arrow-top.svg" alt="Back to top"></a>
-        </div>
+        </nav> 
     </header>
-    <main>
-        <h1>Aqui va web de About us</h1>
+
+    <main class="w-full ">
+        <section class="w-full">
+            <div class="w-ful flex flex-row gap-8">
+                <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-1.png" alt=""></div>
+                <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-2.png" alt=""></div>
+                <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-3.png" alt=""></div>
+                <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-4.png" alt=""></div>
+            </div>
+        </section>
+
+        <section class="w-full md:p-0 p-4 flex flex-col md:flex-row justify-center items-center mt-11 ">
+
+        </section>
+
+       <!-- ========================= About Us Section ========================= -->
+        <section id="about-us" 
+            itemscope itemtype="https://schema.org/LocalBusiness"
+            class="w-full flex flex-col justify-center items-center bg-gray-50 py-16 px-6 md:px-16 lg:px-32 text-gray-800">
+
+        <meta itemprop="name" content="Plum-Mex Showroom">
+        <meta itemprop="image" content="https://plum-mex.co.uk/frontend/img/premium-kitchen-1.jpg">
+        <meta itemprop="telephone" content="+441252851109">
+        <meta itemprop="email" content="info@plum-mex.co.uk">
+        <meta itemprop="address" content="Unit 12, Finns Business Park, Mill Lane, Crondall, GU10 5RX, United Kingdom">
+
+        <!-- Title -->
+        <div class="max-w-5xl text-center mb-12">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4">About Plum-Mex Showroom</h1>
+            <p class="text-lg md:text-xl text-gray-600">
+            Transforming kitchens and bathrooms across Crondall, Farnham, Odiham, and nearby areas.
+            </p>
+        </div>
+
+        <!-- Content Wrapper -->
+        <div class="flex flex-col md:flex-row items-center md:items-start justify-between gap-12 max-w-6xl w-full">
+            
+            <!-- Image -->
+            <div class="md:w-1/2 w-full">
+            <img src="./img/about-showroom.jpg" 
+                alt="Plum-Mex Showroom in Crondall - kitchen and bathroom design" 
+                class="w-full h-auto rounded-3xl shadow-md object-cover">
+            </div>
+
+            <!-- Text -->
+            <article class="md:w-1/2 w-full leading-relaxed text-base md:text-lg text-gray-700">
+            <p class="mb-6">
+                <strong>At Plum-Mex Showroom</strong>, we transform your ideas into reality. From the initial design to the final installation of your new kitchen or bathroom, 
+                we provide tailored solutions that reflect your vision and enhance your lifestyle. 
+                Located in <span itemprop="addressLocality">Crondall</span>, just off the A287 between Farnham and Odiham, 
+                we proudly serve customers within a <strong>20–30 km radius</strong> including <em>Fleet, Alton, Aldershot, Hook, and Basingstoke</em>.
+            </p>
+
+            <p class="mb-6">
+                As a <strong>family-run business</strong>, we care deeply about customer satisfaction and our reputation in the local community. 
+                With years of experience in the construction and installation industry, our team ensures that every project—big or small—is completed to the highest standard. 
+                From premium fittings to bespoke furniture, we use only the finest materials to create timeless, functional spaces.
+            </p>
+
+            <p class="mb-6">
+                Our services include:
+                <ul class="list-disc list-inside mt-2 space-y-2">
+                <li><strong>Custom Design</strong> – Expertly planned layouts that maximise space and reflect your personal style.</li>
+                <li><strong>Supply</strong> – High-quality materials and furniture from trusted manufacturers.</li>
+                <li><strong>Installation</strong> – A professional, coordinated service from start to finish, managed by our trusted team of installers.</li>
+                </ul>
+            </p>
+
+            <p class="mt-8 text-gray-700">
+                Whether you’re looking to redesign a <strong>modern kitchen in Farnham</strong> or install a <strong>luxury bathroom in Odiham</strong>, 
+                Plum-Mex Showroom is your trusted local partner. Visit us at our <span itemprop="name">Crondall showroom</span> 
+                to discover how we can bring your ideas to life.
+            </p>
+
+            <a href="contact.html" 
+                class="inline-block mt-8 px-8 py-3 bg-[#3DB5BD] text-white rounded-md text-lg font-medium hover:bg-[#319197] transition duration-300 ease-in-out">
+                Contact Us
+            </a>
+            </article>
+        </div>
+        </section>
+       
+
     </main>
 
     <!-- ------------------------Footer------------------------ -->
 
-    <footer>
-        <div class="w-full flex flex-row justify-between items-center p-6 ">
-            <div class="w-3/12 flex justify-start items-center">
-                <p>© copyright all rights reserved</p>
-            </div>
-            <div class="w-6/12 border-b-black border-b-2">
-                <ul class="flex justify-around items-center text-xl mr-1">
-                    <li class="mb-4"><a class="px-4 py-1.5 hover:overline" href="index.html">Showroom</a>
+    <footer class="flex flex-col justify-center items-center w-full bg-white">
+        <!-- ocultar en pantallas grandes -->
+         <div class="flex justify-center xl:w-[60%] md:w-[80%] md:border-t-black md:border-t-2 mt-4 mb-4">
+                <ul class="flex flex-col md:flex-row justify-around items-center md:w-full w-full text-xl lg:text-md md:text-md mr-1">
+                    <li class="mt-4"><a class="px-4 py-1.5 transition delay-150 duration-200 ease-in-out hover:border-b-2 border-black" href="index.html">Showroom</a>
                     </li>
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:overline"
+                    <li class="mt-4"><a
+                            class="px-4 py-1.5 text-black transition delay-150 duration-200 ease-in-out hover:border-b-2 border-black"
                             href="projects.html">Projects</a></li>
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:overline"
+                    <li class="mt-4"><a
+                            class="px-4 py-1.5 transition delay-150 duration-200 ease-in-out hover:border-b-2 border-black"
                             href="kitchens.html">kitchens</a></li>
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:overline"
+                    <li class="mt-4"><a
+                            class="px-4 py-1.5 transition delay-150 duration-200 ease-in-out hover:border-b-2 border-black"
                             href="bathrooms.html">Bathrooms</a></li>
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 bg-black text-white rounded-xl"
+                    <li class="mt-4"><a
+                            class="px-4 py-1.5  border-b-2 border-black"
                             href="about-us.html">About us</a></li>
-                    <li class="mb-4"><a
-                            class="px-4 py-1.5 rounded-xl transition delay-150 duration-200 ease-in-out hover:overline"
+                    <li class="mt-4"><a class="px-4 py-1.5 transition delay-150 duration-200 ease-in-out hover:border-b-2 border-black"
                             href="contact.html">Contact</a></li>
                 </ul>
             </div>
-            <div class="w-3/12 flex justify-end items-center">
-                <a href="">Terminos y condiciones</a>
+        <div class="w-full flex justify-center items-center relative">
+            <div class="w-full absolute bottom-0 flex p-4 text-white justify-between items-center">
+                <p>© copyright all rights reserved</p>
+                <a href="">Terms and conditions</a>
             </div>
-        </div>
-        <div class="w-full flex justify-center items-center relative ">
             <img class="absolute -top-1 left-0" src="./img/plum-mex-subtract.png" alt="">
             <img src="./img/kitchen-footer.png" alt="">
         </div>
     </footer>
+     <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 flex flex-col md:flex-row items-center justify-between z-50 hidden">
+        <p class="text-sm md:text-base mb-2 md:mb-0">
+            We use cookies to improve your browsing experience and analyse our traffic. By continuing, you agree to our
+            <a href="privacy.html" class="underline hover:text-[#3DB5BD]">Privacy Policy</a>.
+        </p>
+        <div class="flex gap-2">
+            <button id="accept-cookies" class="bg-[#3DB5BD] text-white px-4 py-2 rounded-md text-sm hover:bg-[#319197]">
+            Accept
+            </button>
+            <button id="decline-cookies" class="bg-gray-700 text-white px-4 py-2 rounded-md text-sm hover:bg-gray-600">
+            Decline
+            </button>
+        </div>
+    </div>
+    <script src="./js/main.js"></script>
+     <script>
+       // navbar toggle menu and cookies
+        const toggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+
+        toggle.addEventListener('click', () => {
+            navbar.classList.toggle('hidden');
+        });
+
+        const banner = document.getElementById('cookie-banner');
+        const acceptBtn = document.getElementById('accept-cookies');
+        const declineBtn = document.getElementById('decline-cookies');
+
+        // Mostrar banner si no hay decisión guardada
+        if (!localStorage.getItem('cookieConsent')) {
+            banner.classList.remove('hidden');
+        }
+
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            banner.classList.add('hidden');
+        });
+
+        declineBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            banner.classList.add('hidden');
+        });
+    </script>
 </body>
+
 </html>

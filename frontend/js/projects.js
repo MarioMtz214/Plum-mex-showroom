@@ -1,6 +1,5 @@
 // frontend/js/projects.js
-// frontend/js/projects.js
-
+const BACKEND = "https://plummex-backend.onrender.com"; // <- ajusta a tu URL real
 const dropzone = document.getElementById("dropzone");
 const mediaInput = document.getElementById("media");
 const form = document.getElementById("projectForm");
@@ -61,31 +60,40 @@ form.addEventListener("submit", async (e) => {
   console.log("Description:", form.elements["description"].value);
   console.log("Type:", type);
 
-  try {
-    const res = await fetch("http://localhost:3000/api/gallery/upload", {
-      method: "POST",
-      body: formData
-    });
-    const data = await res.json();
+ // dentro del submit handler, sustituye el fetch por:
+const xhr = new XMLHttpRequest();
+xhr.open("POST", `${BACKEND}/api/gallery/upload`, true);
 
-    if (res.ok && data.success) {
+xhr.upload.onprogress = (event) => {
+  if (event.lengthComputable) {
+    const percent = Math.round((event.loaded / event.total) * 100);
+    message.textContent = `Uploading... ${percent}%`;
+  }
+};
+
+xhr.onload = () => {
+  try {
+    const data = JSON.parse(xhr.responseText);
+    if (xhr.status >= 200 && xhr.status < 300 && data.success) {
       message.textContent = "✅ Proyecto subido correctamente.";
-      message.classList.remove("text-red-600");
-      message.classList.add("text-green-600");
       form.reset();
       dropzone.textContent = "Drag & drop images or videos here or click to select";
       selectedFiles = [];
       loadGallery();
       loadProjects();
     } else {
-      throw new Error(data.error || "Error desconocido");
+      message.textContent = `❌ Error: ${data.error || xhr.responseText}`;
     }
-  } catch (err) {
-    console.error(err);
-    message.textContent = `❌ Error al subir archivo: ${err.message}`;
-    message.classList.remove("text-green-600");
-    message.classList.add("text-red-600");
+  } catch (e) {
+    message.textContent = `❌ Error parsing server response: ${e.message}`;
   }
+};
+
+xhr.onerror = () => {
+  message.textContent = "❌ Upload failed (network).";
+};
+
+xhr.send(formData);
 });
 
 // Load projects into delete select
@@ -93,7 +101,7 @@ async function loadProjects() {
   const select = document.getElementById("deleteSelect");
   select.innerHTML = "";
   try {
-    const res = await fetch("http://localhost:3000/api/gallery/projects");
+    const res = await fetch(`${BACKEND}/api/gallery/projects`);
     const projects = await res.json();
 
     projects.forEach(p => {
@@ -121,7 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/api/gallery/delete", {
+      const res = await fetch(`${BACKEND}/api/gallery/delete`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ids: selected })
@@ -144,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Load gallery for frontend
 async function loadGallery() {
   try {
-    const res = await fetch("http://localhost:3000/api/gallery/projects");
+    const res = await fetch(`${BACKEND}/api/gallery/projects`);
     if (!res.ok) {
       const text = await res.text();
       throw new Error(text);
