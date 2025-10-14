@@ -15,9 +15,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // --- CORS ---
 app.use(cors({
-  origin: true, // Acepta cualquier origen (solo para test)
-  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-  credentials: true,
+  origin: ["https://plum-mex.co.uk", "https://www.plum-mex.co.uk"],
+  methods: ["GET","POST","PUT","DELETE","OPTIONS"],
+  credentials: true
 }));
 
 // --- CSP (temporal más permisivo) ---
