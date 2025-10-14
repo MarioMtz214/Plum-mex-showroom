@@ -36,9 +36,9 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use('/api/contact', contactRoute);
 app.use('/api/gallery', galleryRoutes);
 
-// Start
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+// Start server
+const listener = app.listen(process.env.PORT || 10000, "0.0.0.0", () => {
+  console.log(`✅ Server running on port ${listener.address().port}`);
 });
 
 
