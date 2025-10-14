@@ -35,7 +35,7 @@ dropzone.addEventListener("drop", (e) => {
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const type = form.elements["type"].value;
+  const type = form.elements["type"].value; // aquí sí existe
   if (!type) {
     message.textContent = "⚠️ Debes seleccionar un tipo (image o video).";
     message.classList.add("text-red-600");
@@ -52,48 +52,34 @@ form.addEventListener("submit", async (e) => {
   formData.append("title", form.elements["title"].value);
   formData.append("description", form.elements["description"].value);
   formData.append("mediaType", type);
-
   selectedFiles.forEach(file => formData.append("media", file));
 
-  console.log("Uploading files:", selectedFiles);
-  console.log("Title:", form.elements["title"].value);
-  console.log("Description:", form.elements["description"].value);
-  console.log("Type:", type);
-
- // dentro del submit handler, sustituye el fetch por:
-const xhr = new XMLHttpRequest();
-xhr.open("POST", `${BACKEND}/api/gallery/upload`, true);
-
-xhr.upload.onprogress = (event) => {
-  if (event.lengthComputable) {
-    const percent = Math.round((event.loaded / event.total) * 100);
-    message.textContent = `Uploading... ${percent}%`;
-  }
-};
-
-xhr.onload = () => {
   try {
-    const data = JSON.parse(xhr.responseText);
-    if (xhr.status >= 200 && xhr.status < 300 && data.success) {
+    const res = await fetch(`${BACKEND}/api/gallery/upload`, {
+      method: "POST",
+      body: formData,
+      credentials: "include"
+    });
+    const data = await res.json();
+
+    if (res.ok && data.success) {
       message.textContent = "✅ Proyecto subido correctamente.";
+      message.classList.remove("text-red-600");
+      message.classList.add("text-green-600");
       form.reset();
       dropzone.textContent = "Drag & drop images or videos here or click to select";
       selectedFiles = [];
       loadGallery();
       loadProjects();
     } else {
-      message.textContent = `❌ Error: ${data.error || xhr.responseText}`;
+      throw new Error(data.error || "Error desconocido");
     }
-  } catch (e) {
-    message.textContent = `❌ Error parsing server response: ${e.message}`;
+  } catch (err) {
+    console.error(err);
+    message.textContent = `❌ Error al subir archivo: ${err.message}`;
+    message.classList.remove("text-green-600");
+    message.classList.add("text-red-600");
   }
-};
-
-xhr.onerror = () => {
-  message.textContent = "❌ Upload failed (network).";
-};
-
-xhr.send(formData);
 });
 
 // Load projects into delete select
@@ -101,7 +87,10 @@ async function loadProjects() {
   const select = document.getElementById("deleteSelect");
   select.innerHTML = "";
   try {
-    const res = await fetch(`${BACKEND}/api/gallery/projects`);
+    const res = await fetch(`${BACKEND}/api/gallery/projects`, {
+      method: "GET",
+      credentials: "include"
+    });
     const projects = await res.json();
 
     projects.forEach(p => {
