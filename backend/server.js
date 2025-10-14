@@ -13,12 +13,28 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// CORS: permite tu dominio y también conexiones seguras (https)
+// --- CORS ---
 app.use(cors({
-  origin: ["https://plum-mex.co.uk", "https://www.plum-mex.co.uk"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  origin: true, // Acepta cualquier origen (solo para test)
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 }));
+
+// --- CSP (temporal más permisivo) ---
+app.use((req, res, next) => {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src * 'unsafe-inline' 'unsafe-eval' data: blob:;"
+  );
+  next();
+});
+
+// // CORS: permite tu dominio y también conexiones seguras (https)
+// app.use(cors({
+//   origin: ["https://plum-mex.co.uk", "https://www.plum-mex.co.uk"],
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   credentials: true,
+// }));
 
 // Content-Security-Policy (agrega Cloudinary y Render)
 app.use((req, res, next) => {
