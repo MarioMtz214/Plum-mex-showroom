@@ -170,7 +170,7 @@ async function loadGallery() {
 
     projects.forEach((proj) => {
       proj.media.forEach((mediaItem) => {
-        const url = `/uploads/${mediaItem.filename}`;
+        const url = mediaItem.url || `/uploads/${mediaItem.filename}`;
         if (mediaItem.media_type === "video") {
           const videoEl = document.createElement("video");
           videoEl.src = url;
