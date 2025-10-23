@@ -6,6 +6,7 @@ const { sendContactEmail } = require("../email-graph");
 const router = express.Router();
 
 router.post("/", async (req, res) => {
+  console.log("📨 New contact form submission:", req.body);
   const { name, email, phone, message } = req.body;
 
   if (!name || !email || !phone || !message) {
