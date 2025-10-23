@@ -39,7 +39,7 @@ await client.api(`/users/${process.env.MS_SENDER}/sendMail`).post({
               <tr>
                 <!-- Columna izquierda -->
                 <td width="50%" valign="top" style="padding:10px;">
-                  <img src="https://plum-mex.co.uk/img/LOGO-PLUM-MEX-negro-1.png" alt="Plum-Mex" width="160" style="margin-bottom:15px; display:block;">
+                  <img src="https://plum-mex.co.uk/img/LOGO%20PLUM-MEX%20negro%201.png" alt="Plum-Mex" width="160" style="margin-bottom:15px; display:block;">
                   <p style="font-size:16px; font-weight:bold; margin:0;">Get in Touch</p>
                   <p style="margin:5px 0; font-size:14px;">
                     📞 Call us: <a href="tel:01252851109" style="color:#000000; text-decoration:none;">01252 851109</a><br>
