@@ -73,6 +73,7 @@ await client.api(`/users/${process.env.MS_SENDER}/sendMail`).post({
       { emailAddress: { address: process.env.MS_SENDER } },
     ],
   },
+  saveToSentItems: true,
 });
 
 // 4. Enviar confirmación al cliente
@@ -136,6 +137,7 @@ await client.api(`/users/${process.env.MS_SENDER}/sendMail`).post({
       { emailAddress: { address: email } }, // se lo envías al cliente
     ],
   },
+  saveToSentItems: true,
 });
 }
 
