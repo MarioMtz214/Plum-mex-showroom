@@ -31,7 +31,7 @@ await client.api(`/users/${process.env.MS_SENDER}/sendMail`).post({
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Post Code:</strong> ${postCode || "—"}</p>
+          <p><strong>Post Code:</strong> ${postCode}</p>
           <p><strong>Message:</strong><br/>${message}</p>
 
           <!-- Footer estilo Figma -->
