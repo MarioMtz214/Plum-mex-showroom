@@ -4,7 +4,7 @@ require("isomorphic-fetch"); // para fetch en Node
 const { TokenCredentialAuthenticationProvider } = require("@microsoft/microsoft-graph-client/authProviders/azureTokenCredentials");
 const { ClientSecretCredential } = require("@azure/identity");
 
-async function sendContactEmail({ name, email, phone, message }) {
+async function sendContactEmail({ name, email, phone, postCode, message }) {
   // 1. Credenciales desde .env
   const credential = new ClientSecretCredential(
     process.env.MS_TENANT_ID,   
@@ -31,6 +31,7 @@ await client.api(`/users/${process.env.MS_SENDER}/sendMail`).post({
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Phone:</strong> ${phone}</p>
+          <p><strong>Post Code:</strong> ${postCode || "—"}</p>
           <p><strong>Message:</strong><br/>${message}</p>
 
           <!-- Footer estilo Figma -->
