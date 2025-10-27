@@ -9,7 +9,7 @@ router.post("/", async (req, res) => {
   console.log("📨 New contact form submission:", req.body);
   const { name, email, phone, postCode, message } = req.body;
 
-  if (!name || !email || !phone || !postCode || !message) {
+  if (!name || !email || !phone || !message) {
     return res.status(400).json({ message: "All fields are required." });
   }
 
