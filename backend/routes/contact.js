@@ -7,15 +7,15 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   console.log("📨 New contact form submission:", req.body);
-  const { name, email, phone, message } = req.body;
+  const { name, email, phone, postCode, message } = req.body;
 
-  if (!name || !email || !phone || !message) {
+  if (!name || !email || !phone || !postCode || !message) {
     return res.status(400).json({ message: "All fields are required." });
   }
 
   try {
     // Enviar correo con Graph API
-    await sendContactEmail({ name, email, phone, message });
+    await sendContactEmail({ name, email, phone, postCode, message });
 
     res.status(200).json({ message: "Message sent successfully. We'll contact you soon!" });
   } catch (error) {
