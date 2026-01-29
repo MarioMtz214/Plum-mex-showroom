@@ -7,7 +7,12 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   console.log("📨 New contact form submission:", req.body);
-  const { name, email, phone, postCode, message } = req.body;
+  const { name, email, phone, postCode, message, website } = req.body;
+
+  // honeypot
+if (website && website.trim() !== "") {
+  return res.status(200).json({ message: "OK" }); // responde 200 para no dar pistas
+}
 
   if (!name || !email || !phone || !message) {
     return res.status(400).json({ message: "All fields are required." });
