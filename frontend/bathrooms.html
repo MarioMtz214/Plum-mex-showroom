@@ -9,13 +9,17 @@
     <meta name="keywords" content="Plum-mex, Showroom, Kitchens, Bathrooms, Renovation, Design, Installation, Custom Design, Supply">
     <meta name="author" content="Plum-mex Team">
     <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' http://localhost:3000;"> -->
-    <link rel="icon" href="/frontend/img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/frontend/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="https://plum-mex.co.uk/img/Logo-plum-mex-1x1-white-bg-favicon.png">
+    <link rel="apple-touch-icon" href="https://plum-mex.co.uk/img/Logo-plum-mex-1x1-white-bg-180x180.png">
 
     <title>Plum-mex Showroom</title>
-    <link rel="stylesheet" href="./css/output.css">
-    <link rel="stylesheet" href="./css/styles.css">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="canonical" href="https://plum-mex.co.uk/bathrooms.html">
+  <link rel="stylesheet" href="./css/output.css?v=20261007">
+    <link rel="stylesheet" href="./css/styles.css?v=20261007">
 
+  <script src="./js/tracking.js?v=20261007" defer></script>
 </head>
 
 <body>
@@ -61,39 +65,119 @@
     <main class="w-full ">
         <section class="w-full">
             <div class="w-ful flex flex-row gap-8">
-                <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-1.png" alt=""></div>
-                <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-2.png" alt=""></div>
+                <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-1.png" alt="" fetchpriority="high"></div>
+                <div class="w-1/4"><img src="./img/img-kitchen-frame2.png" alt=""></div>
                 <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-3.png" alt=""></div>
                 <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-4.png" alt=""></div>
             </div>
         </section>
 
-        <section class="w-full md:p-0 p-4 flex flex-col md:flex-row justify-center items-center mt-11 ">
-            <!-- Maintenance Popup -->
-            <div id="maintenance-popup" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4 hidden">
-                <div class="bg-white rounded-lg max-w-4xl w-full flex overflow-hidden shadow-lg">
-                    
-                    <!-- Image on the left -->
-                    <div class="w-1/2">
-                    <img src="img/elegant_kitchen.jpg" alt="Plum-Mex Showroom" class="w-full h-full object-cover">
-                    </div>
-                    
-                    <!-- Text on the right -->
-                    <div class="w-1/2 p-6 flex flex-col justify-center">
-                    <h2 class="text-2xl font-bold mb-4">Website Under Maintenance</h2>
-                    <p class="text-gray-700 mb-4">
-                        At <strong>Plum-Mex</strong>, we are currently working on our website to provide you with an improved experience.
-                    </p>
-                    <p class="text-gray-700 mb-4">In the meantime, you can visit our social media pages or get in touch with us:</p>
-                    <div class="flex flex-col gap-2 text-center">
-                        <a href="https://www.instagram.com/plummexshowroom/" target="_blank" class="text-[#3DB5BD] hover:underline">Instagram</a>
-                        <a href="https://www.facebook.com/Plummex" target="_blank" class="text-[#3DB5BD] hover:underline">Facebook</a>
-                        <a href="https://plum-mex.co.uk/contact.html" class="text-[#3DB5BD] hover:underline">Contact</a>
-                    </div>
-                    <!-- <button id="close-popup" class="mt-6 px-4 py-2 bg-gray-800 text-white rounded hover:bg-gray-900 w-32">Close</button> -->
-                    </div>
+        <!-- SECTION 1: Showroom Welcome -->
+        <section class="py-16 px-6 bg-gray-50 text-gray-800 text-center md:text-left">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+                <div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900">
+                    Visit Our Farnham Bathroom & Kitchen Showroom
+                </h1>
+                <p class="leading-relaxed mb-6">
+                    Step inside our <strong>luxury bathroom and kitchen showroom in Farnham</strong> and experience design inspiration like never before.  
+                    Many of our guests tell us they've <em>“never seen a showroom like it”</em> — and with good reason.  
+                    Each display is thoughtfully styled to look and feel like a real home, featuring complete bathrooms and kitchens that highlight the latest trends in <strong>modern living</strong>.
+                </p>
+                <p class="leading-relaxed mb-8">
+                    Every element in our showroom is up to date, with discontinued or unavailable products carefully removed to ensure that what you see is exactly what you can have in your home.
+                </p>
+                <a href="contact.html" class="inline-block bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition">
+                    Book a Free Design Appointment
+                </a>
+                </div>
+                <div class="flex justify-center">
+                <img src="./img/Bathroom-Showroom-Displays.jpg" alt="Luxury Bathroom Showroom in Farnham" class="rounded-2xl shadow-lg w-full max-w-md object-cover" loading="lazy">
                 </div>
             </div>
+        </section>
+
+        <!-- SECTION 2: Bathroom Collections -->
+        <section class="py-16 px-6 bg-white text-gray-800">
+            <div class="max-w-5xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-semibold mb-6">Our Bathroom Collections</h2>
+                <p class="max-w-3xl mx-auto mb-6 leading-relaxed">
+                Whether you’re updating a single bathroom or planning multiple suites at once, <strong>Plum-mex Showroom</strong> offers tailored solutions for every need.
+                Each bathroom project receives the individual attention it deserves, from concept to completion.
+                </p>
+                <p class="max-w-3xl mx-auto mb-8 leading-relaxed">
+                We supply a wide range of <strong>traditional, contemporary, and designer bathroom styles</strong> from trusted brands such as <strong>Ambiance Bain, Dansani, and Utopia</strong>.
+                Discover our collection of premium vanity units, brassware, showers, mirrors, and accessories — all crafted for beauty and functionality.
+                </p>
+                <a href="projects.html" class="inline-block bg-gray-900 text-white px-8 py-3 rounded-full font-medium hover:bg-gray-700 transition">
+                View Our Bathroom Projects
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Showroom Displays -->
+        <section class="py-16 px-6 bg-gray-50 text-gray-800">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+                <div class="order-2 md:order-1 flex justify-center">
+                <img src="./img/Bathroom-Showroom.jpg" alt="Bathroom Display at Plum-mex Showroom" class="rounded-2xl shadow-lg w-full max-w-md object-cover" loading="lazy">
+                </div>
+                <div class="order-1 md:order-2">
+                <h2 class="text-3xl md:text-4xl font-semibold mb-6">Bathroom Showroom Displays</h2>
+                <p class="leading-relaxed mb-6">
+                    Our <strong>Farnham bathroom showroom</strong> features over <strong>20 lifestyle displays</strong> that showcase a broad selection of
+                    suites, vanity units, showers, mirrors, tiles, and bathroom furniture.  
+                    From <strong>classic elegance</strong> to <strong>cutting-edge modern designs</strong>, we offer every style imaginable — all under one roof.
+                </p>
+                <p class="leading-relaxed mb-6">
+                    Our displays feature premium brands including <strong>Dansani, Ambiance Bain, Utopia, GRAFF, Vado, Porcelanosa, HiB,</strong> and <strong>Impey Showers</strong>,
+                    catering to every taste and budget. Visit us and see how we can bring your ideal bathroom to life.
+                </p>
+                <a href="contact.html" class="inline-block bg-black text-white px-8 py-3 rounded-full font-medium hover:bg-gray-800 transition">
+                    Visit Our Showroom
+                </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: SEO / Local Area Focus -->
+        <section class="py-12 bg-white text-gray-700 text-center px-6 border-t border-gray-200">
+            <h3 class="text-2xl font-semibold mb-4">Beautiful Bathrooms Across Hampshire & Surrey</h3>
+            <p class="max-w-3xl mx-auto leading-relaxed">
+                At <strong>Plum-mex Showroom</strong> in Crondall, we proudly design and install bespoke bathrooms for homeowners across
+                <strong>Farnham, Odiham, Fleet, Hook, Alton,</strong> and the surrounding areas of <strong>Hampshire and Surrey</strong>.
+                Our expertise covers everything from <strong>modern en-suites</strong> and <strong>family bathrooms</strong> to complete
+                <strong>luxury bathroom renovations</strong> using only the finest brands and craftsmanship.
+            </p>
+        </section>
+        <!-- SECTION: Virtual Showroom Tour -->
+        <section class="py-16 px-6 bg-black text-white">
+        <div class="max-w-6xl mx-auto text-center mb-10">
+            <h2 class="text-3xl md:text-4xl font-semibold mb-4">
+            Explore Our Bathroom Showroom Virtually
+            </h2>
+            <p class="max-w-3xl mx-auto opacity-90 leading-relaxed">
+            Take a virtual walk through our bathroom showroom and explore our displays from the comfort of your home.
+            Discover layouts, materials, and finishes before visiting us in person.
+            </p>
+        </div>
+
+        <div class="max-w-6xl mx-auto">
+            <div class="relative w-full overflow-hidden rounded-2xl shadow-2xl aspect-video">
+            <iframe
+                src="https://www.google.com/maps/embed?hl=en-GB&pb=!4v1765809694964!6m8!1m7!1sCAoSFkNJSE0wb2dLRUlDQWdJQ2huSjJzTUE.!2m2!1d51.24876520138518!2d-0.8711327964483068!3f118.31356381985928!4f-21.022470915318436!5f0.7820865974627469"
+                class="absolute top-0 left-0 w-full h-full border-0"
+                allowfullscreen
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+            </div>
+        </div>
+
+        <div class="text-center mt-10">
+            <a href="contact.html" class="inline-block bg-white text-black px-8 py-3 rounded-full font-medium hover:bg-gray-200 transition">
+            Book a Bathroom Design Appointment
+            </a>
+        </div>
         </section>
 
        <!-- Maintenance Popup -->
@@ -128,28 +212,28 @@
         <div class="w-full flex justify-center items-center relative">
             <div class="w-full absolute bottom-0 flex p-4 text-white justify-between items-center">
                 <p>© copyright all rights reserved</p>
-                <a href="">Terms and conditions</a>
+                <span><a href="privacy.html">Privacy policy</a> &nbsp;|&nbsp; <a href="terms-and-conditions.html">Terms and conditions</a></span>
             </div>
             <img class="absolute -top-1 left-0" src="./img/plum-mex-subtract.png" alt="">
-            <img src="./img/kitchen-footer.png" alt="">
+            <img src="./img/kitchen-footer.png" alt="" loading="lazy">
         </div>
     </footer>
      <!-- Cookie Consent Banner -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 flex flex-col md:flex-row items-center justify-between z-50 hidden">
         <p class="text-sm md:text-base mb-2 md:mb-0">
-            We use cookies to improve your browsing experience and analyse our traffic. By continuing, you agree to our
+            We use essential storage to make this site work. With your permission we would also like to use analytics and advertising cookies (such as Google and Meta) to understand how the site is used and to measure our advertising. Choose Accept or Decline; you can change your mind at any time in our
             <a href="privacy.html" class="underline hover:text-[#3DB5BD]">Privacy Policy</a>.
         </p>
         <div class="flex gap-2">
             <button id="accept-cookies" class="bg-[#3DB5BD] text-white px-4 py-2 rounded-md text-sm hover:bg-[#319197]">
             Accept
             </button>
-            <button id="decline-cookies" class="bg-gray-700 text-white px-4 py-2 rounded-md text-sm hover:bg-gray-600">
+            <button id="decline-cookies" class="bg-[#3DB5BD] text-white px-4 py-2 rounded-md text-sm hover:bg-[#319197]">
             Decline
             </button>
         </div>
     </div>
-    <script src="./js/main.js"></script>
+    <script src="./js/main.js?v=20261007"></script>
      <script>
        // navbar toggle menu and cookies
         const toggle = document.getElementById('menu-toggle');

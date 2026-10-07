@@ -21,18 +21,21 @@
   <!-- ✅ Open Graph / Social Sharing -->
   <meta property="og:title" content="Contact Plum-mex Showroom | Kitchens & Bathrooms in Crondall">
   <meta property="og:description" content="Visit or contact Plum-mex Showroom in Crondall, near Farnham and Odiham. Specialists in bespoke kitchen and bathroom design, supply, and installation.">
-  <meta property="og:image" content="https://plum-mex.co.uk/frontend/img/og-image.jpg">
+  <meta property="og:image" content="https://plum-mex.co.uk/img/og-image.png">
   <meta property="og:url" content="https://plum-mex.co.uk/contact.html">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_GB">
 
   <!-- ✅ Favicon & Apple Icon -->
-  <link rel="icon" href="/frontend/img/Logo-plum-mex-1x1-white-bg-favicon.png" type="image/x-icon">
-  <link rel="apple-touch-icon" href="/frontend/img/Logo-plum-mex-1x1-white-bg-180x180.png">
+  <link rel="icon" type="image/png" href="https://plum-mex.co.uk/img/Logo-plum-mex-1x1-white-bg-favicon.png">
+  <link rel="apple-touch-icon" href="https://plum-mex.co.uk/img/Logo-plum-mex-1x1-white-bg-180x180.png">
 
   <!-- ✅ Styles -->
-  <link rel="stylesheet" href="./css/output.css">
-  <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="canonical" href="https://plum-mex.co.uk/contact.html">
+  <link rel="stylesheet" href="./css/output.css?v=20261007">
+  <link rel="stylesheet" href="./css/styles.css?v=20261007">
 
   <!-- ✅ Schema.org (estructura para Google Business) -->
   <script type="application/ld+json">
@@ -43,7 +46,7 @@
     "mainEntity": {
       "@type": "HomeAndConstructionBusiness",
       "name": "Plum-mex Showroom",
-      "image": "https://plum-mex.co.uk/frontend/img/og-image.jpg",
+      "image": "https://plum-mex.co.uk/img/og-image.png",
       "telephone": "01252 851109",
       "email": "info@plum-mex.co.uk",
       "address": {
@@ -51,7 +54,7 @@
         "streetAddress": "Unit 12, Finns Business Park, Mill Lane, Crondall",
         "addressLocality": "Farnham",
         "postalCode": "GU10 5RX",
-        "addressCountry": "UK"
+        "addressCountry": "GB"
       },
       "areaServed": ["Farnham", "Odiham", "Fleet", "Aldershot", "Crondall"],
       "openingHours": "Mo-Fr 09:00-17:00",
@@ -59,6 +62,7 @@
     }
   }
   </script>
+  <script src="./js/tracking.js?v=20261007" defer></script>
 </head>
 
 <body>
@@ -105,7 +109,7 @@
     <main>
         <section class="w-full">
             <div class="w-ful flex flex-row gap-8">
-                <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-1.png" alt=""></div>
+                <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-1.png" alt="" fetchpriority="high"></div>
                 <div class="w-1/4"><img src="./img/img-kitchen-frame2.png" alt=""></div>
                 <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-3.png" alt=""></div>
                 <div class="w-1/4"><img src="./img/bathroom-kitchen-home-design-4.png" alt=""></div>
@@ -117,7 +121,7 @@
             <a class="fixed bottom-6 right-2 z-50 max-h-20 max-w-20 md:h-15 md:w-15 sm:h-15 sm:w-15 " href="#header"><img src="./icon/arrow-top.svg" alt="Back to top"></a>
         </div>
 
-            <h2 class="text-3xl font-bold text-center mb-8">Book a Visit to Our Showroom</h2>
+            <h1 class="text-3xl font-bold text-center mb-8">Book a Visit to Our Showroom</h1>
             <form id="contact-form" class="space-y-6">
                 <div>
                     <label for="name" class="block mb-2 font-medium">Full Name</label>
@@ -281,7 +285,7 @@
                 </ul>
             </div> -->
             <!-- <div class="w-auto  flex justify-end items-center ">
-                <a href="">Terms and conditions</a>
+                <span><a href="privacy.html">Privacy policy</a> &nbsp;|&nbsp; <a href="terms-and-conditions.html">Terms and conditions</a></span>
             </div> 
         </div> -->
         <!-- ocultar en pantallas grandes -->
@@ -308,23 +312,23 @@
         <div class="w-full flex justify-center items-center relative">
             <div class="w-full absolute bottom-0 flex p-4 text-white justify-between items-center">
                 <p>© copyright all rights reserved</p>
-                <a href="terms-and-conditions.html">Terms and conditions</a>
+                <span><a href="privacy.html">Privacy policy</a> &nbsp;|&nbsp; <a href="terms-and-conditions.html">Terms and conditions</a></span>
             </div>
             <img class="absolute -top-1 left-0" src="./img/plum-mex-subtract.png" alt="">
-            <img src="./img/kitchen-footer.png" alt="">
+            <img src="./img/kitchen-footer.png" alt="" loading="lazy">
         </div>
     </footer>
     <!-- Cookie Consent Banner -->
     <div id="cookie-banner" class="fixed bottom-0 left-0 w-full bg-gray-900 text-white p-4 flex flex-col md:flex-row items-center justify-between z-50 hidden">
         <p class="text-sm md:text-base mb-2 md:mb-0">
-            We use cookies to improve your browsing experience and analyse our traffic. By continuing, you agree to our
+            We use essential storage to make this site work. With your permission we would also like to use analytics and advertising cookies (such as Google and Meta) to understand how the site is used and to measure our advertising. Choose Accept or Decline; you can change your mind at any time in our
             <a href="privacy.html" class="underline hover:text-[#3DB5BD]">Privacy Policy</a>.
         </p>
         <div class="flex gap-2">
             <button id="accept-cookies" class="bg-[#3DB5BD] text-white px-4 py-2 rounded-md text-sm hover:bg-[#319197]">
             Accept
             </button>
-            <button id="decline-cookies" class="bg-gray-700 text-white px-4 py-2 rounded-md text-sm hover:bg-gray-600">
+            <button id="decline-cookies" class="bg-[#3DB5BD] text-white px-4 py-2 rounded-md text-sm hover:bg-[#319197]">
             Decline
             </button>
         </div>
@@ -353,6 +357,8 @@
                 message: form.message.value,
                 website: form.website.value
             };
+            // Campaign attribution (UTM / click IDs). Extra fields: the backend ignores them until it is updated.
+            if (window.PlumMexTracking) Object.assign(data, window.PlumMexTracking.attribution());
 
             try {
                 const res = await fetch('https://plummex-backend.onrender.com/api/contact', {
@@ -364,7 +370,10 @@
                 const result = await res.json();
                 alert(result.message);
 
-                if (res.ok) form.reset();
+                if (res.ok) {
+                    form.reset();
+                    if (window.PlumMexTracking) window.PlumMexTracking.leadSubmitted();
+                }
             } catch (err) {
                 alert('Failed to send the message.');
                 console.error(err);
