@@ -133,8 +133,17 @@
     push('generate_lead', p);
   }
 
-  // Phone, email, social and directions clicks
+  // Project cards, phone, email, social and directions clicks
   document.addEventListener('click', function (e) {
+    var card = e.target && e.target.closest ? e.target.closest('.project-card, .video-card') : null;
+    if (card) {
+      var h = card.querySelector('h2');
+      push('select_project', {
+        project_name: h ? h.textContent.trim().slice(0, 100) : '(unknown)',
+        project_type: card.classList.contains('video-card') ? 'video' : 'gallery',
+        page_path: location.pathname
+      });
+    }
     var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
     if (!a) return;
     var href = a.getAttribute('href') || '';
