@@ -1,4 +1,13 @@
 # -------------------------------------------------------
+# Canonical host: www -> sin www (301) (added 2026-10-09)
+# -------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} ^www\.plum-mex\.co\.uk$ [NC]
+    RewriteRule ^(.*)$ https://plum-mex.co.uk/$1 [R=301,L]
+</IfModule>
+
+# -------------------------------------------------------
 # Plum-mex Showroom — Performance & Cache Rules
 # Hostinger / LiteSpeed compatible
 # -------------------------------------------------------

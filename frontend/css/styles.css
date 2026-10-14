@@ -48,3 +48,47 @@ h1, h2, h3{
   border: 0;
 }
 
+
+/* Scrollbar estilizado para los textos largos */
+.testimonial-text-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.testimonial-text-container::-webkit-scrollbar-track {
+  background: #f4f4f4;
+  border-radius: 10px;
+}
+
+.testimonial-text-container::-webkit-scrollbar-thumb {
+  background: #bfbfbf;
+  border-radius: 10px;
+}
+
+.testimonial-text-container::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
+/* Ajustes para transición visual */
+.bg-white.expanded .testimonial-text-container {
+  transition: all 0.3s ease;
+}
+
+/* Opcional: fade visual al fondo del texto */
+.testimonial-text-container {
+  mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
+
+.bg-white.expanded .testimonial-text-container {
+  mask-image: none;
+}
+
+/* Desactiva el line-clamp al expandir */
+.bg-white.expanded .testimonial-text {
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  overflow: visible !important;
+  text-overflow: unset !important;
+  white-space: normal !important;
+}
+/* 
+

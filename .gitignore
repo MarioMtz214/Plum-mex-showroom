@@ -25,3 +25,17 @@ frontend/css/output.css.map
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Media (do not track)
+frontend/img/**
+**/*.jpg
+**/*.jpeg
+**/*.png
+**/*.webp
+**/*.gif
+**/*.svg
+**/*.mp4
+**/*.mov
+**/*.avi
+**/*.mkv
+**/*.webm

@@ -13,7 +13,7 @@
   'use strict';
 
   // >>> SET THIS once the GTM container exists, e.g. 'GTM-ABC1234'
-  var GTM_ID = '';
+  var GTM_ID = 'GTM-5DHLBZV4';
   // <<<
 
   var CONSENT_KEY = 'cookieConsent';      // written by the banner on every page

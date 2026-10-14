@@ -1,10 +1,16 @@
 // frontend/js/main.js
 
-// frontend/js/main.js
+
 document.addEventListener('DOMContentLoaded', () => {
+  /* ===== Invertir orden de testimonios ===== */
+  const slider = document.getElementById('testimonialSlider');
+  if (slider) {
+    const slides = Array.from(slider.children);
+    slides.reverse().forEach(slide => slider.appendChild(slide));
+  }
+
   /* ===== Slider testimonial (si existe) ===== */
   try {
-    const slider = document.getElementById('testimonialSlider');
     const prev = document.getElementById('prevBtn');
     const next = document.getElementById('nextBtn');
 
@@ -29,6 +35,30 @@ document.addEventListener('DOMContentLoaded', () => {
   } catch (err) {
     console.warn('Slider init failed:', err);
   }
+
+/* ===== Toggle “Read more” con scroll interno ===== */
+document.querySelectorAll('.toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const card = btn.closest('.bg-white');
+    const textContainer = card.querySelector('.testimonial-text-container');
+    const text = card.querySelector('.testimonial-text');
+    const expanded = card.classList.toggle('expanded');
+
+    if (expanded) {
+      // Mostrar texto completo con scroll interno
+      text.classList.remove('line-clamp-9');
+      text.style.display = 'block'; // fuerza re-render
+      textContainer.classList.add('overflow-y-auto', 'pr-2');
+      textContainer.scrollTop = 0;
+      btn.textContent = 'Read less';
+    } else {
+      // Volver al modo recortado
+      text.classList.add('line-clamp-9');
+      textContainer.classList.remove('overflow-y-auto', 'pr-2');
+      btn.textContent = 'Read more';
+    }
+  });
+});
 
   // navbar toggle menu and cookies
        const toggle = document.getElementById('menu-toggle');
@@ -200,19 +230,6 @@ startImageSlider('kitchen-slider', 5000, 700);
 startImageSlider('bathroom-slider', 4000, 700);
 
 
-// document.querySelectorAll('.toggle-btn').forEach(btn => {
-//   btn.addEventListener('click', () => {
-//     const p = btn.previousElementSibling;
-//     p.classList.toggle('line-clamp-9');
-
-//     if (p.classList.contains('line-clamp-9')) {
-//       btn.textContent = "Read more";
-//     } else {
-//       btn.textContent = "Show less";
-//     }
-//   });
-// });
-
 document.querySelectorAll('.toggle-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const p = btn.previousElementSibling;
@@ -230,77 +247,3 @@ document.querySelectorAll('.toggle-btn').forEach(btn => {
     }
   });
 });
-
-
-  // const slider = document.getElementById('testimonialSlider');
-  // const prev = document.getElementById('prevBtn');
-  // const next = document.getElementById('nextBtn');
-
-  // let currentSlide = 0;
-
-  // const updateSlider = () => {
-  //   slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-  // };
-
-  // next.addEventListener('click', () => {
-  //   const maxSlide = slider.children.length - 1;
-  //   if (currentSlide < maxSlide) currentSlide++;
-  //   else currentSlide = 0;
-  //   updateSlider();
-  // });
-
-  // prev.addEventListener('click', () => {
-  //   const maxSlide = slider.children.length - 1;
-  //   if (currentSlide > 0) currentSlide--;
-  //   else currentSlide = maxSlide;
-  //   updateSlider();
-  // });
-
-  //  // Mostrar el popup al cargar
-  // document.addEventListener('DOMContentLoaded', () => {
-  //   const popup = document.getElementById('maintenance-popup');
-  //   popup.classList.remove('hidden');
-
-  //   // Cerrar popup
-  //   document.getElementById('close-popup').addEventListener('click', () => {
-  //     popup.style.display = 'none';
-  //   });
-  // });
-
-
-  //   const menuBtn = document.getElementById('menu-btn');
-  //   const menu = document.getElementById('menu');
-
-  //   menuBtn.addEventListener('click', () => {
-  //     menu.classList.toggle('hidden');
-  //     menu.classList.toggle('flex');
-  //     menu.classList.toggle('flex-col');
-  //     menu.classList.toggle('space-y-4');
-  //     menu.classList.toggle('mt-4');
-  // });
-
-      // const toggle = document.getElementById('menu-toggle');
-      // const navbar = document.getElementById('navbar');
-
-      //   toggle.addEventListener('click', () => {
-      //       navbar.classList.toggle('hidden');
-      //   });
-
-      //   const banner = document.getElementById('cookie-banner');
-      //   const acceptBtn = document.getElementById('accept-cookies');
-      //   const declineBtn = document.getElementById('decline-cookies');
-
-      //   // Mostrar banner si no hay decisión guardada
-      //   if (!localStorage.getItem('cookieConsent')) {
-      //       banner.classList.remove('hidden');
-      //   }
-
-      //   acceptBtn.addEventListener('click', () => {
-      //       localStorage.setItem('cookieConsent', 'accepted');
-      //       banner.classList.add('hidden');
-      //   });
-
-      //   declineBtn.addEventListener('click', () => {
-      //       localStorage.setItem('cookieConsent', 'declined');
-      //       banner.classList.add('hidden');
-      //   });
